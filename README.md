@@ -98,7 +98,7 @@ public class RxBus {
 ```
 
 效果演示：
-![效果演示](https://upload-images.jianshu.io/upload_images/1785445-9d48066d6c2c8c1f.gif?imageMogr2/auto-orient/strip)
+![效果演示](https://upload-images.jianshu.io/upload_images/1785445-1679a2e4b328a6cf.gif?imageMogr2/auto-orient/strip)
 
 好了，就这么多，看着很简单，大家手写一遍才真的行啊，练手很不错的，写完很有成就感
 
