@@ -81,13 +81,15 @@ public class RxBus {
 
 2. 注册
 ```java
-            bookDisposable = RxBus.getInstance().setTag(new Book().getClass()).subscribe(new Consumer<Book>() {
-                @Override
-                public void accept(Book book) throws Exception {
-                    Toast.makeText(context, "数据1收到", Toast.LENGTH_SHORT).show();
-                }
-            });
-            disposables.add(bookDisposable);
+            catDisposable = RxBus.getInstance()
+                    .setTag(new Cat().getClass())
+                    .subscribe(new Consumer<Cat>() {
+                        @Override
+                        public void accept(Cat cat) throws Exception {
+                            Toast.makeText(context, "数据2收到", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+            disposables.add(catDisposable);
 ```
 
 3. 解绑
