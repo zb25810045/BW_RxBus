@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.bloodcrown.bw_rxbus.MainPersenter"></import>
+        <import type="com.bloodcrown.bw_rxbus.Book"></import>
+        <import type="com.bloodcrown.bw_rxbus.Cat"></import>
+        <variable name="persenter" type="MainPersenter"></variable>
+        <variable name="book" type="Book"></variable>
+        <variable name="cat" type="Cat"></variable>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.bloodcrown.bw_rxbus.MainActivity">
+
+        <!--line1-->
+        <Button
+            android:id="@+id/btn_line14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="类型1"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_line11"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_line11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v) -> persenter.register(book)}"
+            android:text="绑定"
+            app:layout_constraintLeft_toRightOf="@id/btn_line14"
+            app:layout_constraintRight_toLeftOf="@id/btn_line12"
+            app:layout_constraintTop_toTopOf="@id/btn_line14"/>
+
+        <Button
+            android:id="@+id/btn_line12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v) ->persenter.unBundle(book)}"
+            android:text="解绑"
+            app:layout_constraintLeft_toRightOf="@id/btn_line11"
+            app:layout_constraintRight_toLeftOf="@id/btn_line13"
+            app:layout_constraintTop_toTopOf="@id/btn_line11"/>
+
+        <Button
+            android:id="@+id/btn_line13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v) ->persenter.sendMessage(book)}"
+            android:text="发射"
+            app:layout_constraintLeft_toRightOf="@id/btn_line12"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn_line12"/>
+
+
+        <!--line2-->
+        <Button
+            android:id="@+id/btn_line24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="类型2"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_line21"
+            app:layout_constraintTop_toBottomOf="@id/btn_line14"/>
+
+        <Button
+            android:id="@+id/btn_line21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v) ->persenter.register(cat)}"
+            android:text="绑定"
+            app:layout_constraintLeft_toRightOf="@id/btn_line24"
+            app:layout_constraintRight_toLeftOf="@id/btn_line22"
+            app:layout_constraintTop_toTopOf="@id/btn_line24"/>
+
+        <Button
+            android:id="@+id/btn_line22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v) ->persenter.unBundle(cat)}"
+            android:text="解绑"
+            app:layout_constraintLeft_toRightOf="@id/btn_line21"
+            app:layout_constraintRight_toLeftOf="@id/btn_line23"
+            app:layout_constraintTop_toTopOf="@id/btn_line21"/>
+
+        <Button
+            android:id="@+id/btn_line23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v) ->persenter.sendMessage(cat)}"
+            android:text="发射"
+            app:layout_constraintLeft_toRightOf="@id/btn_line22"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn_line22"/>
+
+        <!--line3-->
+        <Button
+            android:id="@+id/btn_line34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v) ->persenter.hasObserver()}"
+            android:text="检查是否还有注册者"
+            app:layout_constraintLeft_toLeftOf="@id/btn_line24"
+            app:layout_constraintTop_toBottomOf="@id/btn_line24"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
